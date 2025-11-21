@@ -37,7 +37,6 @@ jobs:
 
       - name: 📝 Generate Markdown Files
         run: |
-          cd ./docs
           npx retype build ./docs
 
       - name: 🚀 Deploy to GitHub Pages
