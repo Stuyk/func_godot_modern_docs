@@ -76,7 +76,10 @@ function runConverter() {
                 const markdownContent = convertHtmlToMarkdown(htmlContent);
                 const splitPaths = filename.split(path.sep);
                 const fileNameWithExtension = splitPaths[splitPaths.length - 1];
-                const outputFileName = fileNameWithExtension.replace(/\.html$/i, '.md');
+                let outputFileName = fileNameWithExtension.replace(/\.html$/i, '.md');
+                if (outputFileName.includes('start')) {
+                   outputFileName = outputFileName.replace('start', 'index') 
+                }
 
                 const outputFullPath = path.join(absoluteOutputDir, outputFileName);
                 fs.writeFileSync(outputFullPath, markdownContent, 'utf8');

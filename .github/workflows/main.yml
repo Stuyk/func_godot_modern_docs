@@ -36,9 +36,11 @@ jobs:
           node ./src/index.js
 
       - uses: retypeapp/action-build@latest
+        working-directory: ./docs
         env:
           RETYPE_KEY: ${{ secrets.RETYPE_KEY }}
 
       - uses: retypeapp/action-github-pages@latest
+        working-directory: ./docs
         with:
           update-branch: true
