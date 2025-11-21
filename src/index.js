@@ -105,7 +105,7 @@ function runConverter() {
 
                 try {
                     // Move the file (fs.renameSync acts as a move operation)
-                    fs.renameSync(sourcePath, destinationPath);
+                    fs.copyFileSync(sourcePath, destinationPath);
                     movedCount++;
                     console.log(`   -> Moved: ${filename}`);
                 } catch (moveError) {

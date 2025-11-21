@@ -35,11 +35,8 @@ jobs:
         run: |
           node ./src/index.js
 
-      - name: "Directory Change"
-        run: |
-          cd ./docs
-
       - uses: retypeapp/action-build@latest
+        config_path: './docs'
         env:
           RETYPE_KEY: ${{ secrets.RETYPE_KEY }}
 
