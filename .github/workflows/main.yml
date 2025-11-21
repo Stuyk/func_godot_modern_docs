@@ -40,12 +40,11 @@ jobs:
           cd ./docs
           npx retype build
 
-      - name: 📤 Push '.retype' directory to 'retype' branch
-        # This is the core action for pushing the directory contents
-        uses: cpina/github-push-action@main
+      - name: 🚀 Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/main' # Only deploy if pushed from the main branch
         with:
-          target: ".retype" 
-          branch: "retype" 
-          force: true 
-          commit-message: Deploying to 'retype' from main branch
-          author: Deploy Bot <actions@github.com>
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./.retype 
+          publish_branch: retype 
+          commit_message: ${{ github.event.head_commit.message }} [skip ci]
