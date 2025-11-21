@@ -1,0 +1,44 @@
+name: Deploy Retype Docs
+
+on:
+  # Trigger the workflow on pushes to the 'main' branch
+  push:
+    branches:
+      - main
+  # Allow manual runs from the Actions tab in GitHub
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    # Use the latest stable Ubuntu runner environment
+    runs-on: ubuntu-latest
+    
+    # Optional: Set permissions for the GITHUB_TOKEN if needed
+    permissions:
+      contents: write # Required to push to gh-pages branch
+
+    steps:
+      - name: ⚙️ Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 
+
+      - name: 🛠️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 📦 Install Dependencies
+        run: npm install 
+
+      - name: 📝 Generate Markdown Files
+        run: |
+          node ./src/index.js
+
+      - uses: retypeapp/action-build@latest
+        env:
+          RETYPE_KEY: ${{ secrets.RETYPE_KEY }}
+
+      - uses: retypeapp/action-github-pages@latest
+        with:
+          update-branch: true
