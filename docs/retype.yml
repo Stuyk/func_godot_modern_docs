@@ -1,5 +1,7 @@
 input: .
 output: .retype
+start:
+  pro: true
 branding:
   title: FuncGodot Modern Docs
   label: Docs

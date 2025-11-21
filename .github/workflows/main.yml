@@ -35,14 +35,12 @@ jobs:
         run: |
           node ./src/index.js
 
-      # - uses: retypeapp/action-build@latest
-      #   with:
-      #     config_path: './docs/retype.yml'
-      #   env:
-      #     RETYPE_KEY: ${{ secrets.RETYPE_KEY }}
-
-      - run: |
+      - name: "Retype Build"
+        env:
+          RETYPE_KEY: ${{ secrets.RETYPE_KEY }}
+        run: |
           cd ./docs
+          npx retype wallet --add=$RETYPE_KEY
           npx retype build
 
       - name: Deploy 🚀
