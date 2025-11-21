@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817084231778">
+    <meta name="turbo-root" content="/func_godot_modern_docs">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817084428281">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -14,29 +15,29 @@
     <meta name="description" content="FuncGodot Manual">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/guide_fgd/">
+    <link rel="canonical" href="https://stuyk.github.io/func_godot_modern_docs/guide_fgd/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/guide_fgd/">
+    <meta property="og:url" content="https://stuyk.github.io/func_godot_modern_docs/guide_fgd/">
     <meta property="og:title" content="Forge Game Data">
     <meta property="og:description" content="FuncGodot Manual">
-    <meta property="og:image" content="/images/guide_fgd_res_list.png">
+    <meta property="og:image" content="https://stuyk.github.io/func_godot_modern_docs/images/guide_fgd_res_list.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/guide_fgd/">
+    <meta property="twitter:url" content="https://stuyk.github.io/func_godot_modern_docs/guide_fgd/">
     <meta property="twitter:title" content="Forge Game Data">
     <meta property="twitter:description" content="FuncGodot Manual">
-    <meta property="twitter:image" content="/images/guide_fgd_res_list.png">
+    <meta property="twitter:image" content="https://stuyk.github.io/func_godot_modern_docs/images/guide_fgd_res_list.png">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../resources/css/retype.css?v=3.11.0.817084231778" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.11.0.817084428281" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.817084231778" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.817084428281" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.817084231778" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.817084428281" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -164,6 +165,24 @@
                             <div class="retype-markdown" id="retype-content">
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
+                                <nav id="retype-breadcrumb" class="breadcrumb" aria-label="Breadcrumb">
+                                    <ol role="list">
+                                        <li class="pr-4">
+                                            <a href="../" class="pr-4">
+                                                Func​Godot Ranger
+                                            </a>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                                            </svg>
+                                        </li>
+                                        <li class="pr-4">
+                                            <a href="../guide_fgd/" class="pr-4">
+                                                Forge Game Data
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                
                                 <!-- Page content  -->
 <p>FuncGodot Manual</p>
 <doc-anchor-target id="forge-game-data" class="break-words">
@@ -174,7 +193,7 @@
 </doc-anchor-target>
 <blockquote>
 <p>FGD stands for &quot;Forge Game Data&quot;, leftover from when the Half-Life 2 level editor Hammer used to be the Half-Life 1 editor Worldcraft, and before that when it was a Quake tool called Forge.</p>
-<p><a href="https://book.leveldesignbook.com/appendix/resources/formats/fgd#history"><strong>The Level Design Book</strong></a></p>
+<p><a href="https://book.leveldesignbook.com/appendix/resources/formats/fgd#history" class="outbound" target="_blank"><span><strong>The Level Design Book</strong></span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></p>
 </blockquote>
 <p>FuncGodot utilizes <a href="../ref_fgd_resources/"><strong>FuncGodotFGD Resources</strong></a> to act as a translation guide for the map build process. These resources are largely separated into two different types: the <strong>FuncGodotFGDFile</strong> and the <strong>FuncGodotFGDEntityClass</strong>. Think of the FGD File as a dictionary, and the FGD Entity Classes as the entries.</p>
 <p><figure class="content-center">
@@ -203,7 +222,7 @@
 </figure>
 </p>
 <p>The <strong>Export File</strong> property does exactly what you might think: it generates and saves your FGD file to the <strong>Map Editor Game Config Folder</strong> set by the <a href="../ref_local_config/">FuncGodot Local Config</a>. Use this whenever you need to update your FGD.</p>
-<p>The next property, <strong>Target Map Editor</strong>, is intended to help with specific key words that aren&#x27;t shared across the different map editors. Point class entities in map editors can have display models assigned to them according to their FGD definitions. Most map editors seem to use the &quot;studio&quot; key word to define the model path, but TrenchBroom instead optionally allows the &quot;model&quot; key word while also including additional display options and expressions. When set to <em>false</em>, FuncGodot will omit entity definition meta properties using the &quot;model&quot; key word in order to prevent errors in your chosen map editor. When exporting the FGD File through a <a href="ref_trenchbroom_resources.html#GameConfig">TrenchBroom Game Config</a> resource the setting will be overridden to <em>true</em>. See the <a href="https://developer.valvesoftware.com/wiki/FGD#Class_Types_and_Properties">Valve Developer Wiki</a> for more information.</p>
+<p>The next property, <strong>Target Map Editor</strong>, is intended to help with specific key words that aren&#x27;t shared across the different map editors. Point class entities in map editors can have display models assigned to them according to their FGD definitions. Most map editors seem to use the &quot;studio&quot; key word to define the model path, but TrenchBroom instead optionally allows the &quot;model&quot; key word while also including additional display options and expressions. When set to <em>false</em>, FuncGodot will omit entity definition meta properties using the &quot;model&quot; key word in order to prevent errors in your chosen map editor. When exporting the FGD File through a <a href="ref_trenchbroom_resources.html#GameConfig">TrenchBroom Game Config</a> resource the setting will be overridden to <em>true</em>. See the <a href="https://developer.valvesoftware.com/wiki/FGD#Class_Types_and_Properties" class="outbound" target="_blank"><span>Valve Developer Wiki</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> for more information.</p>
 <p><strong>Fgd Name</strong> should be self evident: this will be your exported FGD&#x27;s filename, minus the file extension. Best practice would be to set this to either your game&#x27;s name or its acronym.</p>
 <p><strong>Base Fgd Files</strong> is an array of <strong>FuncGodotFGDFile</strong> resources that will be prepended to our final FGD file output. It is not necessary to export these base FGD Files; only the FGD File they are added to needs to be exported and the rest will be built by and merged into what you could consider your &quot;Master FGD File&quot;.</p>
 <blockquote>
@@ -273,7 +292,7 @@
 </doc-anchor-target>
 <p>All default FuncGodot entities, except for <em>Phong</em>, are FuncGodotFGDSolidClass entities. All of the SolidClass entities are very similar, mostly differing in occlusion and collision.</p>
 <ul>
-<li><p><strong>Phong :</strong> A FuncGodotFGDBaseClass that provides <em>_phong</em> and <em>_phong_angle</em> properties to most of the entities below. See the <a href="https://en.wikipedia.org/wiki/Phong_shading">Wikipedia article on Phong Shading</a> for quick primer.</p>
+<li><p><strong>Phong :</strong> A FuncGodotFGDBaseClass that provides <em>_phong</em> and <em>_phong_angle</em> properties to most of the entities below. See the <a href="https://en.wikipedia.org/wiki/Phong_shading" class="outbound" target="_blank"><span>Wikipedia article on Phong Shading</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> for quick primer.</p>
 </li>
 <li><p><strong>VertexMergeDistance :</strong> A FuncGodotFGDBaseClass that provides a <em>_vertex_merge_distance</em> property to all of the entities below. This property is used in the build process to better ensure vertices between brushes get connected, to reduce instances of gaps between seams in polygons.</p>
 </li>

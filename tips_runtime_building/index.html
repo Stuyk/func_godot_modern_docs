@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817084231778">
+    <meta name="turbo-root" content="/func_godot_modern_docs">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817084428281">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -14,29 +15,29 @@
     <meta name="description" content="FuncGodot Manual">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/tips_runtime_building/">
+    <link rel="canonical" href="https://stuyk.github.io/func_godot_modern_docs/tips_runtime_building/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/tips_runtime_building/">
+    <meta property="og:url" content="https://stuyk.github.io/func_godot_modern_docs/tips_runtime_building/">
     <meta property="og:title" content="Runtime Map Building">
     <meta property="og:description" content="FuncGodot Manual">
-    <meta property="og:image" content="/images/tips_editorbuild_trenchbroom1.png">
+    <meta property="og:image" content="https://stuyk.github.io/func_godot_modern_docs/images/tips_editorbuild_trenchbroom1.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/tips_runtime_building/">
+    <meta property="twitter:url" content="https://stuyk.github.io/func_godot_modern_docs/tips_runtime_building/">
     <meta property="twitter:title" content="Runtime Map Building">
     <meta property="twitter:description" content="FuncGodot Manual">
-    <meta property="twitter:image" content="/images/tips_editorbuild_trenchbroom1.png">
+    <meta property="twitter:image" content="https://stuyk.github.io/func_godot_modern_docs/images/tips_editorbuild_trenchbroom1.png">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../resources/css/retype.css?v=3.11.0.817084231778" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.11.0.817084428281" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.817084231778" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.817084428281" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.817084231778" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.817084428281" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -164,6 +165,24 @@
                             <div class="retype-markdown" id="retype-content">
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
+                                <nav id="retype-breadcrumb" class="breadcrumb" aria-label="Breadcrumb">
+                                    <ol role="list">
+                                        <li class="pr-4">
+                                            <a href="../" class="pr-4">
+                                                Func​Godot Ranger
+                                            </a>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                                            </svg>
+                                        </li>
+                                        <li class="pr-4">
+                                            <a href="../tips_runtime_building/" class="pr-4">
+                                                Runtime Map Building
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                
                                 <!-- Page content  -->
 <p>FuncGodot Manual</p>
 <doc-anchor-target id="runtime-map-building" class="break-words">
@@ -202,7 +221,7 @@ func _build_complete() -&gt; void:
 func _build_failed() -&gt; void:
     printerr(&quot;Failed to build the map file! :(&quot;)</code></pre>
 </doc-codeblock></div>
-<p>This example can be found in the <a href="https://github.com/func-godot/func_godot_runtime_building">func_godot_runtime_building repository</a>.</p>
+<p>This example can be found in the <a href="https://github.com/func-godot/func_godot_runtime_building" class="outbound" target="_blank"><span>func_godot_runtime_building repository</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>.</p>
 <doc-anchor-target id="building-from-map-editors">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#building-from-map-editors">#</doc-anchor-trigger>
@@ -216,7 +235,7 @@ func _build_failed() -&gt; void:
         <span>Godot Project Setup Example</span>
     </h2>
 </doc-anchor-target>
-<p>To build and launch our maps from the editor, you&#x27;ll need to employ the <a href="https://docs.godotengine.org/en/stable/classes/class_os.html#class-os-method-get-cmdline-user-args">OS class&#x27; ability to retrieve command line arguments</a>. A basic example might look something like this:</p>
+<p>To build and launch our maps from the editor, you&#x27;ll need to employ the <a href="https://docs.godotengine.org/en/stable/classes/class_os.html#class-os-method-get-cmdline-user-args" class="outbound" target="_blank"><span>OS class&#x27; ability to retrieve command line arguments</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>. A basic example might look something like this:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">extends Node
 
@@ -239,7 +258,7 @@ func _ready():
             func_godot_map.local_map_file = arg_arr[1]
             func_godot_map.build()</code></pre>
 </doc-codeblock></div>
-<p>This example can be found in the <a href="https://github.com/func-godot/func_godot_runtime_building">func_godot_runtime_building repository</a>.</p>
+<p>This example can be found in the <a href="https://github.com/func-godot/func_godot_runtime_building" class="outbound" target="_blank"><span>func_godot_runtime_building repository</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>.</p>
 <blockquote>
 <p>_NOTE: You can extend this to have more commands like God mode or Debug mode as your game needs, and use them when launching in editor.<br />
 _</p>
@@ -257,7 +276,7 @@ _</p>
         <span>TrenchBroom</span>
     </h3>
 </doc-anchor-target>
-<p>The <a href="https://trenchbroom.github.io/manual/latest/#compiling_maps"><strong>TrenchBroom Reference Manual</strong></a> covers Compiling Maps quite thoroughly. If you chose to use the Godot Editor for your launch executable, make sure to start your parameters with the <code v-pre>--path</code> command. You&#x27;ll then add the <code v-pre>-- run_map::</code> build command we defined earlier, using the built-in TrenchBroom variables: <code v-pre>${MAP_BASE_NAME}</code> to get the name of the currently opened map file, <code v-pre>${MAP_DIR_PATH}</code> for the path to the currently opened map file, and <code v-pre>${GAME_DIR_PATH}</code> for the path to the current game as defined in the game preferences.</p>
+<p>The <a href="https://trenchbroom.github.io/manual/latest/#compiling_maps" class="outbound" target="_blank"><span><strong>TrenchBroom Reference Manual</strong></span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> covers Compiling Maps quite thoroughly. If you chose to use the Godot Editor for your launch executable, make sure to start your parameters with the <code v-pre>--path</code> command. You&#x27;ll then add the <code v-pre>-- run_map::</code> build command we defined earlier, using the built-in TrenchBroom variables: <code v-pre>${MAP_BASE_NAME}</code> to get the name of the currently opened map file, <code v-pre>${MAP_DIR_PATH}</code> for the path to the currently opened map file, and <code v-pre>${GAME_DIR_PATH}</code> for the path to the current game as defined in the game preferences.</p>
 <p>An example of the parameters to launch from the Godot Editor will look something like this: <code v-pre>--path ${GAME_DIR_PATH} -- run_map::${MAP_DIR_PATH}/${MAP_BASE_NAME}.map</code></p>
 <ol>
 <li>To run your map from TrenchBroom, navigate to <code v-pre>Run &gt; Compile Map</code>.</li>

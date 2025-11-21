@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml.gz
+Sitemap: https://stuyk.github.io/func_godot_modern_docs/sitemap.xml.gz
