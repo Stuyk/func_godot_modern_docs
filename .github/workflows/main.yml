@@ -36,7 +36,8 @@ jobs:
           node ./src/index.js
 
       - uses: retypeapp/action-build@latest
-        config_path: './docs'
+        with:
+          config_path: './docs'
         env:
           RETYPE_KEY: ${{ secrets.RETYPE_KEY }}
 
