@@ -35,14 +35,17 @@ jobs:
         run: |
           node ./src/index.js
 
-      - uses: retypeapp/action-build@latest
-        with:
-          config_path: './docs/retype.yml'
-        env:
-          RETYPE_KEY: ${{ secrets.RETYPE_KEY }}
+      # - uses: retypeapp/action-build@latest
+      #   with:
+      #     config_path: './docs/retype.yml'
+      #   env:
+      #     RETYPE_KEY: ${{ secrets.RETYPE_KEY }}
+
+      - run: |
+          cd ./docs
+          npx retype build
 
       - uses: retypeapp/action-github-pages@latest
         with:
-          directory: "./docs"
+          directory: "./docs/.retype"
           update-branch: true
-          target-folder: "/"
