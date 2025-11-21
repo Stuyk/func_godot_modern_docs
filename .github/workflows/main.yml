@@ -38,8 +38,7 @@ jobs:
       - name: 📝 Generate Markdown Files
         run: |
           cd ./docs
-          npx retype build
-          ls
+          npx retype build ./docs
 
       - name: 🚀 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
