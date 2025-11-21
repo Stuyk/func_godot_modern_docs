@@ -35,15 +35,12 @@ jobs:
         run: |
           node ./src/index.js
 
-      - name: 📝 Generate Markdown Files
-        run: |
-          npx retype build ./docs
-
-      - name: 🚀 Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        if: github.ref == 'refs/heads/main' # Only deploy if pushed from the main branch
+      - uses: retypeapp/action-build@latest
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .retype
-          publish_branch: retype 
-          commit_message: ${{ github.event.head_commit.message }} [skip ci]
+          config_path: './docs'
+        env:
+          RETYPE_KEY: ${{ secrets.RETYPE_KEY }}
+
+      - uses: retypeapp/action-github-pages@latest
+        with:
+          update-branch: true
