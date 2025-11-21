@@ -35,12 +35,17 @@ jobs:
         run: |
           node ./src/index.js
 
-      - uses: retypeapp/action-build@latest
-        with:
-          config_path: './docs'
-        env:
-          RETYPE_KEY: ${{ secrets.RETYPE_KEY }}
+      - name: 📝 Generate Markdown Files
+        run: |
+          cd ./docs
+          npx retype build
 
-      - uses: retypeapp/action-github-pages@latest
+      - name: 📤 Push '.retype' directory to 'retype' branch
+        # This is the core action for pushing the directory contents
+        uses: cpina/github-push-action@main
         with:
-          update-branch: true
+          target: ".retype" 
+          branch: "retype" 
+          force: true 
+          commit-message: Deploying to 'retype' from main branch
+          author: Deploy Bot <actions@github.com>
