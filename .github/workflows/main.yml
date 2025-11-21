@@ -39,12 +39,13 @@ jobs:
         run: |
           cd ./docs
           npx retype build
+          ls
 
       - name: 🚀 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main' # Only deploy if pushed from the main branch
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./.retype 
+          publish_dir: .retype
           publish_branch: retype 
           commit_message: ${{ github.event.head_commit.message }} [skip ci]
