@@ -37,7 +37,7 @@ jobs:
 
       - uses: retypeapp/action-build@latest
         with:
-          config_path: './docs'
+          config_path: './docs/retype.yml'
         env:
           RETYPE_KEY: ${{ secrets.RETYPE_KEY }}
 
