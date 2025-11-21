@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817077768694">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.11.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Entity Key Value Pairs</title>
+    <meta name="title" content="Entity Key Value Pairs">
+    <meta name="description" content="FuncGodot Manual">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.example.com/docs/ref_key_value_pairs/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.example.com/docs/ref_key_value_pairs/">
+    <meta property="og:title" content="Entity Key Value Pairs">
+    <meta property="og:description" content="FuncGodot Manual">
+    <meta property="og:image" content="https://docs.example.com/docs/images/ref_kvp_classprops.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.example.com/docs/ref_key_value_pairs/">
+    <meta property="twitter:title" content="Entity Key Value Pairs">
+    <meta property="twitter:description" content="FuncGodot Manual">
+    <meta property="twitter:image" content="https://docs.example.com/docs/images/ref_kvp_classprops.png">
+
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
+
+    <link href="../../resources/css/retype.css?v=3.11.0.817077768694" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.817077768694" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.817077768694" data-turbo-eval="false" defer></script>
+</head>
+<body>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Project Name</span>
+                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav id="retype-header-nav" class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="../../docs/">Docs</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="retype-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+    
+        <div id="retype-container" class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+            
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="../../docs/">Docs</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 bg-body-bg">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="retype-markdown" id="retype-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="retype-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<p>FuncGodot Manual</p>
+<doc-anchor-target id="entity-key-value-pairs" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#entity-key-value-pairs">#</doc-anchor-trigger>
+        <span>Entity Key Value Pairs</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="what-are-key-value-pairs">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-are-key-value-pairs">#</doc-anchor-trigger>
+        <span>What Are Key Value Pairs?</span>
+    </h2>
+</doc-anchor-target>
+<p>Key Value Pairs are the most powerful aspect of FuncGodot. All of the <em>Class Properties</em> set in a <a href="ref_fgd_resources.html#Entity">FuncGodotFGDEntity</a> definition get added to the corresponding entity placed in the map editor.</p>
+<p>Key Value Pairs are defined in a <em>FuncGodotFGDEntityClass</em> resource&#x27;s <em>Class Properties</em> dictionary. A Class Property is defined with a key String and a value of many of the <a href="class_variant.md">Godot Variant Types</a> (see <doc-anchor-trigger to="#PropertyTypes">Property Types</doc-anchor-trigger> below for a full list). The value set becomes both the default value and the Variant type the FuncGodotMap applies to that property on map build.</p>
+<p><figure class="content-center">
+    <img src="../images/ref_kvp_classprops.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>Additionally, you can define a property description. With the exception of <doc-anchor-trigger to="#Choices">Choices</doc-anchor-trigger> and <doc-anchor-trigger to="#BitFlags">Bit Flags</doc-anchor-trigger>, property descriptions are created by matching a key from <em>Class Properties</em> to the <em>Class Property Descriptions</em> dictionary and setting a <strong>String</strong> value for the description.</p>
+<p><figure class="content-center">
+    <img src="../images/ref_kvp_classdescs.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>The result as it appears in TrenchBroom:</p>
+<p><figure class="content-center">
+    <img src="../images/ref_kvp_classprops_tb.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>If you plan on using J.A.C.K. you may want to use the descriptions as proper names for the keys rather than actual descriptions. The same entity&#x27;s properties as they appear in J.A.C.K.:</p>
+<p><img src="../images/ref_kvp_classprops_jack1.png" alt="" /> <img src="../images/ref_kvp_classprops_jack2.png" alt="" /></p>
+<p>Once the corresponding node is generated by a <a href="../ref_func_godot_map/">FuncGodotMap</a>, these key value pairs are then applied to the generated node&#x27;s <em>func_godot_properties</em> dictionary. Additionally, if you add undefined key value pairs in your map editor, these too will be added to your node&#x27;s <em>func_godot_properties</em> dictionary.</p>
+<blockquote>
+<p><em>NOTE: Entity keys that are not given values will have their default values applied to the generated node&#x27;s</em> func_godot_properties <em>dictionary.</em></p>
+</blockquote>
+<doc-anchor-target id="applying-key-values">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#applying-key-values">#</doc-anchor-trigger>
+        <span>Applying Key Values</span>
+    </h2>
+</doc-anchor-target>
+<p>It&#x27;s pretty easy to apply entity key value pairs to nodes generated by FuncGodot. You have one property and two methods that you can use: the Dictionary <code v-pre>func_godot_properties</code>, the method <code v-pre>_func_godot_apply_properties(entity_properties: Dictionary)</code>, and the deferred method <code v-pre>_func_godot_build_complete()</code>.</p>
+<p>After the entity is built, FuncGodot will check if the entity contains a <code v-pre>func_godot_properties</code> Dictionary, and if it exists it will apply the translated key value pairs as a Dictionary to this variable. In order for the application to persist at Runtime or after closing your scene, you&#x27;ll need to make sure the variable is an <code v-pre>@export</code> variable.</p>
+<p>Use <code v-pre>_func_godot_apply_properties</code> to apply your key value pairs to your node, as they are passed through the <code v-pre>_func_godot_properties</code> argument in the function.</p>
+<p><code v-pre>_func_godot_build_complete</code> is a deferred call that happens after every entity has called <code v-pre>_func_godot_apply_properties</code>, making it safe to reference any nodes generated during <code v-pre>_func_godot_apply_properties</code>.</p>
+<p><figure class="content-center">
+    <img src="../images/guide_fgd_apply_props.png" alt="FuncGodotMap GDScript method showing application of 'func_godot_properties' and callback of '_func_godot_apply_properties' and '_func_godot_build_complete'." class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">FuncGodotMap GDScript method showing application of 'func_godot_properties' and callback of '_func_godot_apply_properties' and '_func_godot_build_complete'.</figcaption>
+</figure>
+</p>
+<p>You are allowed to limit yourself to only the application methods you&#x27;re interested in. Mix and match these options as you see fit for your entities.</p>
+<doc-anchor-target id="property-types">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#property-types">#</doc-anchor-trigger>
+        <span>Property Types</span>
+    </h2>
+</doc-anchor-target>
+<p>FuncGodot supports many of the <a href="https://docs.godotengine.org/en/stable/classes/class_%40globalscope.html#enum-globalscope-variant-type">Godot Variant types</a>. Consult the [key values section of the FGD page on the Valve Developer Wiki](<a href="https://developer.valvesoftware.com/wiki/FGD#key">https://developer.valvesoftware.com/wiki/FGD#key</a> values) for more information on FGD value types.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Godot Variant Type</td>
+<td>FGD Value Type</td>
+<td>Notes</td>
+</tr>
+<tr>
+<td><a href="class_int.md">Int</a></td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="class_float.md">Float</a></td>
+<td>float</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="class_string.md">String</a></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="class_string.md">StringName</a></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="class_bool.md">Bool</a></td>
+<td>choices</td>
+<td>Automatically sets up options &quot;No&quot; and &quot;Yes&quot; with values &quot;0&quot; and &quot;1&quot; respectively.</td>
+</tr>
+<tr>
+<td><a href="class_vector2.md">Vector2</a></td>
+<td>string</td>
+<td>Vector2 key values are represented as string &quot;X Y&quot;. Can accept floating point values.</td>
+</tr>
+<tr>
+<td><a href="class_vector2i.md">Vector2i</a></td>
+<td>string</td>
+<td>Vector2i key values are represented as string &quot;X Y&quot;. Can only accept integer values.</td>
+</tr>
+<tr>
+<td><a href="class_vector3.md">Vector3</a></td>
+<td>string</td>
+<td>Vector3 key values are represented as string &quot;X Y Z&quot;. Can accept floating point values.</td>
+</tr>
+<tr>
+<td><a href="class_vector3i.md">Vector3i</a></td>
+<td>string</td>
+<td>Vector3i key values are represented as string &quot;X Y Z&quot;. Can only accept integer values.</td>
+</tr>
+<tr>
+<td><a href="class_vector4.md">Vector4</a></td>
+<td>string</td>
+<td>Vector4 key values are represented as string &quot;W X Y Z&quot;. Can accept floating point values.</td>
+</tr>
+<tr>
+<td><a href="class_vector4i.md">Vector4i</a></td>
+<td>string</td>
+<td>Vector4i key values are represented as string &quot;W X Y Z&quot;. Can only accept integer values.</td>
+</tr>
+<tr>
+<td><a href="class_color.md">Color</a></td>
+<td>color255</td>
+<td>Color key values are represented as &quot;R G B&quot;, with each value being from 0 to 255. Some map editors may offer a color picker.  <br>Alpha is always set to 1.0. If alpha requires specification, use an additional float property.</td>
+</tr>
+<tr>
+<td><a href="class_dictionary.md">Dictionary</a></td>
+<td>choices</td>
+<td>Returns an <a href="class_int.md">Int</a> or <a href="class_string.md">String</a> on map build.  <br>Dictionaries are a special property case. See the <doc-anchor-trigger to="#Choices">Choices</doc-anchor-trigger> section for more information.</td>
+</tr>
+<tr>
+<td><a href="class_array.md">Array</a></td>
+<td>flags</td>
+<td>Returns an <a href="class_int.md">Int</a> on map build to be used as a bit mask.  <br>Somewhat complicated to set up and only flexibly supported in TrenchBroom.  <br>See the <doc-anchor-trigger to="#BitFlags">Bit Flags</doc-anchor-trigger> section for more information.</td>
+</tr>
+<tr>
+<td><a href="class_nodepath.md">NodePath</a></td>
+<td>target_destination</td>
+<td>NodePath is intended as a targeting property type in map editors, similar to Quake&#x27;s &quot;target&quot; property. Some map editors may have additional editor display options showing links between entities. Not utilized in every map editor. Returns a <em>String</em> on map build.</td>
+</tr>
+<tr>
+<td><a href="class_material.md">Material</a></td>
+<td>material / shader</td>
+<td>Material is intended as a texture path property type in map editors. Some map editors may offer a texture picker. J.A.C.K. utilizes the <em>shader</em> key word (make sure to set your <a href="ref_fgd_resources.html#File">FuncGodotFGDFile&#x27;s target_map_editor property</a> to <em>JACK</em>). Returns a <em>String</em> on map build, using the assigned default Material&#x27;s resource path as the property&#x27;s value.</td>
+</tr>
+<tr>
+<td><a href="class_texture2d.md">Texture2D</a></td>
+<td>decal</td>
+<td>Texture2D is intended as a decal texture path property type in map editors. Some map editors may offer a texture picker, typically filtered to only access a <em>decals.wad</em>. In the map editor, the texture at the specified path will behave in a similar way to <a href="class_decal.md">Godot&#x27;s Decal node</a>. Returns a <em>String</em> on map build, using the assigned default Texture2D&#x27;s resource path as the property&#x27;s value.</td>
+</tr>
+<tr>
+<td><a href="class_audiostream.md">AudioStream</a></td>
+<td>sound</td>
+<td>AudioStream is intended as an audio file path property type in map editors. Some map editors may offer a sound picker. Returns a <em>String</em> on map build, using the assigned default AudioStream&#x27;s resource path as the property&#x27;s value.</td>
+</tr>
+<tr>
+<td><a href="class_object.md">Object</a></td>
+<td>target_source</td>
+<td>Object is intended as a target name property type in map editors, similar to Quake&#x27;s &quot;targetname&quot; property. Some map editors may have additional editor display options showing links between entities. Not utilized in every map editor. Returns a <em>String</em> on map build.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="choices">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#choices">#</doc-anchor-trigger>
+        <span>Choices</span>
+    </h2>
+</doc-anchor-target>
+<p>The <strong>choices</strong> key value type allows you to open a dropdown menu of predefined options in your map editor. They are defined in Godot by choosing a value type of dictionary, with each key being the option text and each value being the property value. Keys are always Strings, but values can be either Int or String.</p>
+<p><figure class="content-center">
+    <img src="../images/ref_kvp_choices1.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>Normally the default value is set in Class Properties, but for Choices we can&#x27;t do this (not without a fair amount of trouble). Instead we use Class Property Descriptions to set a default value. We do this by creating an Array with 2 elements: the first element is a String serving as the description; the second element is the default choice and should be either an Int or String matching one of the option values defined in Class Properties.</p>
+<p>Once written to the FGD you should get a something like this in your map editor:</p>
+<p><figure class="content-center">
+    <img src="../images/ref_kvp_choices2.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<blockquote>
+<p><em>NOTE: While Bool types always generate a choices key value type, you don&#x27;t need to set them up any differently than any other property. FuncGodot will automatically format Bool types for you on FGD export.</em></p>
+</blockquote>
+<doc-anchor-target id="bit-flags">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#bit-flags">#</doc-anchor-trigger>
+        <span>Bit Flags</span>
+    </h2>
+</doc-anchor-target>
+<p>Bit flags are the most complex key value type to set up, but offer a lot in simplifying complex comparisons and systems in your game scripts.</p>
+<p>To set up a bit flags property, choose Array as the value&#x27;s Variant type. Each element of the Array will be an Array as well, representing a single Flag. Each Flag Array is composed of 3 elements: a String serving as the Flag Description, an Int declaring the Flag&#x27;s Bit Value, and an Int representing the Flag&#x27;s default state.</p>
+<p>Bit Flag properties do not utilize descriptions so there is no need to add one to the entity&#x27;s Class Property Descriptions dictionary.</p>
+<p><figure class="content-center">
+    <img src="../images/ref_kvp_bitflags1.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>Once exported, you should get something like this:</p>
+<p><img src="../images/ref_kvp_bitflags_tb.png" alt="" /> <img src="../images/ref_kvp_bitflags_jack.png" alt="" /></p>
+<p>Left, Trenchbroom; Right, J.A.C.K.; Not shown: NetRadiant Custom because I&#x27;m lazy, but it&#x27;s pretty similar to J.A.C.K. in this regard.</p>
+<p>Even though Godot uses 64 bit signed integers, map editors only seem to offer support for up to 24 bit flags. This is largely an artifact of the Quake engine, specifically its Quake C programming language. QuakeC doesn&#x27;t have an integer type and instead used a 32 bit floating point number. The result was that only 24 bits remained to be used in bitwise operations. The Half-Life engine inherited this limitation, and subsequent Quake and Valve map editors designed their bit flag menus with this limitation in mind.</p>
+<p>In TrenchBroom this isn&#x27;t too much of a problem as you can have multiple bit flag key value pairs. Unfortunately other map editors are designed to only support one group of flags that they assume to be <strong>spawnflags</strong>, no matter what they&#x27;re called in the FGD. J.A.C.K. will just overwrite spawnflags. NetRadiant Custom will throw errors if it detects flag values with matching bits and be unable to open. All key value types of flags will be compiled into the entity&#x27;s Flags property and saved in the map file with the key &quot;spawnflags&quot;.</p>
+<p>If you&#x27;re using another map editor other than TrenchBroom, you can still use multiple flags key value pairs or inherit them across multiple Base Classes. Just make sure each flags property applied to an entity has a unique bit value and expect FuncGodot to build it as a compiled <em>spawnflags</em> bitmask.</p>
+<p><figure class="content-center">
+    <img src="../images/ref_kvp_bitflags2.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-anchor-target id="build-stage-properties">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#build-stage-properties">#</doc-anchor-trigger>
+        <span>Build Stage Properties</span>
+    </h2>
+</doc-anchor-target>
+<p>In <em>Quake</em> mapping there are a number of compiler only key value pairs that can alter the way the map is built, typically preceded by an underscore. These include properties like <em>_phong</em>, <em>_minlight</em>, and <em>_shadow</em>.</p>
+<p><em>FuncGodot</em> also has a few properties that can be used as part of the build process, all of which are customizable in the Map Settings resource. These properties are exposed by the FGD to be set in the map file and read by FuncGodot&#x27;s core classes throughout the build stages. These build stage properties are:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Map Settings Property</td>
+<td>Default Key</td>
+<td>Variant Type</td>
+<td>Notes</td>
+</tr>
+<tr>
+<td>Entity Name Property</td>
+<td></td>
+<td><a href="class_string.md">String</a></td>
+<td>Property used to rename nodes. The entity is renamed &quot;entity_&quot; + entity_name_property. This can be overridden by the entity definition.</td>
+</tr>
+<tr>
+<td>Entity Smoothing Property</td>
+<td>_phong</td>
+<td><a href="class_bool.md">Bool</a></td>
+<td>Determines whether the <em>FuncGodotFGDSolidClass</em> entity performs mesh smoothing operations.</td>
+</tr>
+<tr>
+<td>Entity Smoothing Angle Property</td>
+<td>_phong_angle</td>
+<td><a href="class_float.md">Float</a></td>
+<td>The angular threshold that determines when a <em>FuncGodotFGDSolidClass</em> entity&#x27;s mesh vertices are smoothed.</td>
+</tr>
+<tr>
+<td>Vertex Merge Distance Property</td>
+<td>_vertex_merge_distance</td>
+<td><a href="class_float.md">Float</a></td>
+<td>Provides a snapping epsilon for vertices in a <em>FuncGodotFGDSolidClass</em> entity&#x27;s mesh. Adjusting this value can remove instances of gaps between polygon seams.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Some of these properties have built-in support through the use of the default <a href="ref_fgd_resources.html#Base">FuncGodotFGDBaseClass</a> resources <em>Phong</em> and <em>VertexMergeDistance</em>.</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer id="retype-content-footer" class="clear-both">
+                            
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../docs/tips_multiple_models/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                                <span class="block mt-1">Conditional Models in Trench​Broom</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../docs/guide_fgd/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                                <span class="block mt-1">Forge Game Data</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="retype-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Entity Key Value Pairs", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>

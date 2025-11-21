@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817077768694">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.11.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Runtime Map Building</title>
+    <meta name="title" content="Runtime Map Building">
+    <meta name="description" content="FuncGodot Manual">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.example.com/docs/tips_runtime_building/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.example.com/docs/tips_runtime_building/">
+    <meta property="og:title" content="Runtime Map Building">
+    <meta property="og:description" content="FuncGodot Manual">
+    <meta property="og:image" content="https://docs.example.com/docs/images/tips_editorbuild_trenchbroom1.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.example.com/docs/tips_runtime_building/">
+    <meta property="twitter:title" content="Runtime Map Building">
+    <meta property="twitter:description" content="FuncGodot Manual">
+    <meta property="twitter:image" content="https://docs.example.com/docs/images/tips_editorbuild_trenchbroom1.png">
+
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
+
+    <link href="../../resources/css/retype.css?v=3.11.0.817077768694" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.817077768694" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.817077768694" data-turbo-eval="false" defer></script>
+</head>
+<body>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Project Name</span>
+                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav id="retype-header-nav" class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="../../docs/">Docs</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="retype-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+    
+        <div id="retype-container" class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+            
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="../../docs/">Docs</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 bg-body-bg">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="retype-markdown" id="retype-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="retype-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<p>FuncGodot Manual</p>
+<doc-anchor-target id="runtime-map-building" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#runtime-map-building">#</doc-anchor-trigger>
+        <span>Runtime Map Building</span>
+    </h1>
+</doc-anchor-target>
+<p>There are times where you may want to build maps while in the middle of running your game, whether it&#x27;s for loading levels from map files instead of scenes, procedural generation, or as a way to support user-made maps. Runtime map building can also be combined with map editor launch configurations to provide a largely seamless experience between making a map and seeing it in-game.</p>
+<doc-anchor-target id="setting-up-runtime-map-building">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-up-runtime-map-building">#</doc-anchor-trigger>
+        <span>Setting up Runtime Map Building</span>
+    </h2>
+</doc-anchor-target>
+<p>To build a map at Runtime, start by either using a templated scene with an empty <em>FuncGodotMap</em> or instantiating one. Next you&#x27;ll need to make sure to set either the <code v-pre>local_map_file</code> or <code v-pre>global_map_file</code> to your map&#x27;s file path. Don&#x27;t use <code v-pre>load()</code> here! That will be taken care of in the next step.</p>
+<p>Once your map file path has been set, you can run the <code v-pre>build()</code> method from the <a href="../ref_func_godot_map/">FuncGodotMap</a> node. When this is done, your map will be built just as it would have been by pressing the <em>Build</em> button in the Editor, along with all of the entity callbacks. Be aware that the <code v-pre>Engine.is_editor_hint()</code> conditional will return as false, in case you use it to control properties handling through the FuncGodot entity callbacks.</p>
+<p>When the map builds, it will emit the signals <code v-pre>build_complete</code> or <code v-pre>build_failed</code>. You can use these signals to handle errors gracefully and to run any post-build code you need to run.</p>
+<p>An example of runtime map building is as follows:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">extends Node
+
+@onready var func_godot_map := $FuncGodotMap as FuncGodotMap
+
+# We can connect the various build signals of the FuncGodotMap 
+# in order to add more functionality after building.
+func _ready():
+    func_godot_map.connect(&quot;build_complete&quot;, _build_complete)
+    func_godot_map.connect(&quot;build_failed&quot;, _build_failed)
+    func_godot_map.local_map_file = &quot;res://maps/example.map&quot;
+    func_godot_map.build()
+
+func _build_complete() -&gt; void:
+    print(&quot;Build successful!&quot;)
+
+func _build_failed() -&gt; void:
+    printerr(&quot;Failed to build the map file! :(&quot;)</code></pre>
+</doc-codeblock></div>
+<p>This example can be found in the <a href="https://github.com/func-godot/func_godot_runtime_building">func_godot_runtime_building repository</a>.</p>
+<doc-anchor-target id="building-from-map-editors">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#building-from-map-editors">#</doc-anchor-trigger>
+        <span>Building from Map Editors</span>
+    </h1>
+</doc-anchor-target>
+<p>Much like id Tech engine games, it&#x27;s possible to build and launch directly into a map from some map editors. This can be quite a helpful tool for testing rapid iterations.</p>
+<doc-anchor-target id="godot-project-setup-example">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#godot-project-setup-example">#</doc-anchor-trigger>
+        <span>Godot Project Setup Example</span>
+    </h2>
+</doc-anchor-target>
+<p>To build and launch our maps from the editor, you&#x27;ll need to employ the <a href="https://docs.godotengine.org/en/stable/classes/class_os.html#class-os-method-get-cmdline-user-args">OS class&#x27; ability to retrieve command line arguments</a>. A basic example might look something like this:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">extends Node
+
+@onready var func_godot_map := $FuncGodotMap as FuncGodotMap
+
+func _ready():
+    # We want to loop through each command line argument until we find 
+    # our &quot;run_map&quot; argument. This argument will be split using :: as a delimiter,
+    # giving us a two element array with the second element being our map's path.
+    for cmdline_arg in OS.get_cmdline_user_args():
+        if cmdline_arg.contains(&quot;run_map::&quot;):
+            var arg_arr := cmdline_arg.split(&quot;::&quot;)
+            
+            # Safety check to make sure we didn't mess up our command line arguments.
+            # We should have a String array with [argument command, argument value].
+            if arg_arr.size() != 2:
+                return
+            
+            # Apply the argument value to our map node and build!
+            func_godot_map.local_map_file = arg_arr[1]
+            func_godot_map.build()</code></pre>
+</doc-codeblock></div>
+<p>This example can be found in the <a href="https://github.com/func-godot/func_godot_runtime_building">func_godot_runtime_building repository</a>.</p>
+<blockquote>
+<p>_NOTE: You can extend this to have more commands like God mode or Debug mode as your game needs, and use them when launching in editor.<br />
+_</p>
+</blockquote>
+<doc-anchor-target id="setting-up-your-editor">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-up-your-editor">#</doc-anchor-trigger>
+        <span>Setting Up Your Editor</span>
+    </h2>
+</doc-anchor-target>
+<p>In every map editor you&#x27;ll need to specify both an <strong>executable</strong> and <strong>parameters</strong> in your build options. The executable can be either the <strong>exported binary of your game</strong>, or the <strong>Godot Editor binary</strong> if launching from a Godot project. To run your game from the Godot project, be sure to use the <code v-pre>--path</code> parameter, as defined in <a href="command_line_tutorial.md"><strong>Godot&#x27;s Command line reference</strong></a>.</p>
+<doc-anchor-target id="trenchbroom">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#trenchbroom">#</doc-anchor-trigger>
+        <span>TrenchBroom</span>
+    </h3>
+</doc-anchor-target>
+<p>The <a href="https://trenchbroom.github.io/manual/latest/#compiling_maps"><strong>TrenchBroom Reference Manual</strong></a> covers Compiling Maps quite thoroughly. If you chose to use the Godot Editor for your launch executable, make sure to start your parameters with the <code v-pre>--path</code> command. You&#x27;ll then add the <code v-pre>-- run_map::</code> build command we defined earlier, using the built-in TrenchBroom variables: <code v-pre>${MAP_BASE_NAME}</code> to get the name of the currently opened map file, <code v-pre>${MAP_DIR_PATH}</code> for the path to the currently opened map file, and <code v-pre>${GAME_DIR_PATH}</code> for the path to the current game as defined in the game preferences.</p>
+<p>An example of the parameters to launch from the Godot Editor will look something like this: <code v-pre>--path ${GAME_DIR_PATH} -- run_map::${MAP_DIR_PATH}/${MAP_BASE_NAME}.map</code></p>
+<ol>
+<li>To run your map from TrenchBroom, navigate to <code v-pre>Run &gt; Compile Map</code>.</li>
+<li>Select the godot executable for the tool path.</li>
+<li>For the parameters, define the path to your game and then pass in the map we want to run. Here we use the example given above.</li>
+<li>Now when you press Compile your game should launch using the parameters you defined!</li>
+</ol>
+<p><figure class="content-center">
+    <img src="../images/tips_editorbuild_trenchbroom1.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<blockquote>
+<p>_NOTE: <code v-pre>${GAME_DIR_PATH}</code> and <code v-pre>${MAP_DIR_PATH}</code> both fail if the file path has spaces. If this affects you, you can use the exact path with quotes around it.<br />
+_</p>
+</blockquote>
+<doc-anchor-target id="netradiant-custom">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#netradiant-custom">#</doc-anchor-trigger>
+        <span>NetRadiant Custom</span>
+    </h3>
+</doc-anchor-target>
+<p>To launch from NetRadiant Custom, you must define at least one or more build <strong>commands</strong> which are defined in your <code v-pre>default_build_menu.xml</code> file located in your game&#x27;s gamepack folder for its build processes. These build <strong>commands</strong> may refer to build <strong>variables</strong> also defined here, or one of the default variables NetRadiant provides for you. You may either write them directly in the file yourself, or define them in the NetRadiant Custom GamePack Config resource. To preview these defaults, or any of your defined commands and their current values, select <code v-pre>Build &gt; Customize...</code> in the top menu bar and check the <code v-pre>build variables</code> option.</p>
+<p>A build profile might look something like this:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">&lt;?xml version=&quot;1.0&quot;?&gt;
+    &lt;project version=&quot;2.0&quot;&gt;
+        &lt;var name=&quot;game&quot;&gt;&quot;[EnginePath]example_project.[ExecutableType]&quot;&lt;/var&gt;
+        &lt;build name=&quot;Run and build map in exported project&quot;&gt;
+            &lt;command&gt;[game] -- run_map::&quot;[MapFile]&quot;&lt;/command&gt;
+        &lt;/build&gt;
+    &lt;/project&gt;</code></pre>
+</doc-codeblock></div>
+<p>After making any changes to this file, restart NetRadiant Custom. The build menu will now show your new options; selecting one will run the command you defined above!</p>
+<p><figure class="content-center">
+    <img src="../images/tips_editorbuild_radiant1.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer id="retype-content-footer" class="clear-both">
+                            
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../docs/ref_local_config/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                                <span class="block mt-1">Project Settings</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../docs/sidenav/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                                <span class="block mt-1">Sidenav</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="retype-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Runtime Map Building", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
