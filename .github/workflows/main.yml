@@ -43,5 +43,4 @@ jobs:
 
       - uses: retypeapp/action-github-pages@latest
         with:
-          directory: "./docs/tmp"
           update-branch: true
