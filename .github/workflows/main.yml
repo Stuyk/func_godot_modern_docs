@@ -35,12 +35,14 @@ jobs:
         run: |
           node ./src/index.js
 
+      - name: "Directory Change"
+        run: |
+          cd ./docs
+
       - uses: retypeapp/action-build@latest
-        working-directory: ./docs
         env:
           RETYPE_KEY: ${{ secrets.RETYPE_KEY }}
 
       - uses: retypeapp/action-github-pages@latest
-        working-directory: ./docs
         with:
           update-branch: true
