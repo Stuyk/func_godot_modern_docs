@@ -42,6 +42,6 @@ jobs:
           RETYPE_KEY: ${{ secrets.RETYPE_KEY }}
 
       - uses: retypeapp/action-github-pages@latest
-        working-directory: ./docs/.retype
         with:
           update-branch: true
+          directory: docs
