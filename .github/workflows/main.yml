@@ -41,7 +41,10 @@ jobs:
         env:
           RETYPE_KEY: ${{ secrets.RETYPE_KEY }}
 
+      - name: "cd..."
+        run: |
+          cd ./docs/.retype
+
       - uses: retypeapp/action-github-pages@latest
         with:
-          directory: './docs/.retype'
           update-branch: true
