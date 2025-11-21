@@ -45,7 +45,7 @@ jobs:
           cd ./docs
           npx retype build
 
-      - uses: retypeapp/action-github-pages@latest
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          directory: "./docs/.retype"
-          update-branch: true
+          folder: ./docs/.retype
