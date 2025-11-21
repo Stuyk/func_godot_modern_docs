@@ -1,0 +1,10 @@
+input: ./docs
+output: .retype
+branding:
+  title: FuncGodot Modern Docs
+  label: Docs
+
+links:
+  - text: Original Docs
+    link: https://github.com/func-godot/func_godot_docs
+

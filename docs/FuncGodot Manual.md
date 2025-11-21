@@ -1,1 +1,0 @@
-FuncGodot Manual
