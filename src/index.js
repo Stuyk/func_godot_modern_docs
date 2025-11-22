@@ -120,9 +120,9 @@ function runConverter() {
                     continue;
                 }
 
-                // if (outputFileName.includes('sidenav')) {
-                //     continue
-                // }
+                if (outputFileName.includes('sidenav')) {
+                    continue
+                }
 
                 if (outputFileName.includes('FuncGodot Manual')) {
                     continue;
