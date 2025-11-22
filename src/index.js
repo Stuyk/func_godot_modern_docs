@@ -24,11 +24,10 @@ function preprocessLinks(htmlContent) {
         return `href="${newPath}"`;
     });
 
-    const svgLinkRemovalRegex = /href="[^"]+\.svg"/gi;
-    processedHtml = processedHtml.replace(svgLinkRemovalRegex, '');
+    const svgImageRemovalRegex = /<img[^>]*?src="[^"]+\.svg"[^>]*?>/gi;
+    processedHtml = processedHtml.replace(svgImageRemovalRegex, '');
 
     const imageRegex = /src="([^"]+\.(?:png|jpe?g|gif|webp|svg|bmp))"/gi;
-
     processedHtml = processedHtml.replace(imageRegex, (match, fullPath) => {
         const parts = fullPath.split('/');
         const filename = parts[parts.length - 1];
@@ -40,6 +39,8 @@ function preprocessLinks(htmlContent) {
 }
 
 function convertHtmlToMarkdown(htmlContent) {
+    htmlContent = htmlContent.replace(/<title>.*?<\/title>/gi, "");
+
     const preprocessedHtml = preprocessLinks(htmlContent);
     const turndownService = new TurndownService({
         headingStyle: 'atx', // Use # for headings
@@ -92,7 +93,7 @@ function runConverter() {
                     continue
                 }
 
-                if (outputFileName.includes('funcgodot-manual')) {
+                if (outputFileName.includes('FuncGodot Manual')) {
                     continue;
                 }
 
