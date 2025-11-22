@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import TurndownService from 'turndown';
 import turndownPluginGfm from '@joplin/turndown-plugin-gfm';
+import { Sidebar } from './sidebar.js';
 
 const OUTPUT_DIR_NAME = 'docs';
 const INPUT_DIRECTORY = './func_godot_docs';
@@ -51,6 +52,33 @@ function convertHtmlToMarkdown(htmlContent) {
     return turndownService.turndown(preprocessedHtml);
 }
 
+function appendMetaData(filename, content) {
+    const metadata = Sidebar[filename];
+
+    if (!metadata) {
+        console.warn(`${filename} does not have metadata`)
+        return content;
+    }
+
+    console.log(metadata);
+
+    const { title, weight } = metadata;
+
+    // Construct the YAML frontmatter string
+    const frontmatter = `---
+label: ${title}
+order: ${weight}
+---\r\n
+    `;
+
+    return frontmatter + content;
+}
+
+
+function cleanupMarkdown(markdown) {
+    return markdown.replace(/\\_/gm, '');
+}
+
 function runConverter() {
     if (!INPUT_DIRECTORY) {
         console.error("Error: Please provide the path to the directory containing HTML files.");
@@ -77,10 +105,13 @@ function runConverter() {
 
             for (const filename of htmlFiles) {
                 const htmlContent = fs.readFileSync(filename, 'utf8');
-                const markdownContent = convertHtmlToMarkdown(htmlContent);
+                let markdownContent = cleanupMarkdown(convertHtmlToMarkdown(htmlContent));
+               
                 const splitPaths = filename.split(path.sep);
                 const fileNameWithExtension = splitPaths[splitPaths.length - 1];
                 let outputFileName = fileNameWithExtension.replace(/\.html$/i, '.md');
+                markdownContent = appendMetaData(outputFileName, markdownContent);
+
                 if (outputFileName.includes('start')) {
                    outputFileName = outputFileName.replace('start', 'index') 
                 }
@@ -89,9 +120,9 @@ function runConverter() {
                     continue;
                 }
 
-                if (outputFileName.includes('sidenav')) {
-                    continue
-                }
+                // if (outputFileName.includes('sidenav')) {
+                //     continue
+                // }
 
                 if (outputFileName.includes('FuncGodot Manual')) {
                     continue;
