@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/func_godot_modern_docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817092218485">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817093248920">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../resources/css/retype.css?v=3.11.0.817092218485" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.11.0.817093248920" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.817092218485" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.817093248920" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.817092218485" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.817093248920" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -169,7 +169,7 @@
                                     <ol role="list">
                                         <li class="pr-4">
                                             <a href="../" class="pr-4">
-                                                Index
+                                                What is Func​Godot
                                             </a>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                                                 <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
@@ -227,14 +227,14 @@
         <span>How Do I Live Without Worldspawn?</span>
     </h2>
 </doc-anchor-target>
-<p>You&#x27;ll want to create a <a href="ref_fgd_resources.html#Solid">Solid Class entity</a> that matches the <em>Worldspawn</em> entity definition. It&#x27;s recommended that you change the <em>Spawn Type</em> to <strong>ENTITY</strong> though. Feel free to also add any <em>Class Properties</em> you feel would benefit your game&#x27;s design. The world geometry solid class entity used in Tim&#x27;s games is typically called <strong>func_geo</strong>. He never shuts up about it.</p>
+<p>You&#x27;ll want to create a <a href="ref_fgd_resources.html#Solid">Solid Class entity</a> that matches the <em>Worldspawn</em> entity definition. It&#x27;s recommended that you change the <em>Spawn Type</em> to <strong>ENTITY</strong> though. Feel free to also add any <em>Class Properties</em> you feel would benefit your game&#x27;s design. The world geometry solid class entity used in Tim&#x27;s games is typically called <strong>funcgeo</strong>. He never shuts up about it.</p>
 <doc-anchor-target id="a-world-alongside-worldspawn">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#a-world-alongside-worldspawn">#</doc-anchor-trigger>
         <span>A World Alongside Worldspawn</span>
     </h2>
 </doc-anchor-target>
-<p>It would also help to create your own new <em>worldspawn</em> entity definition that doesn&#x27;t build visuals or collision, so that you can more easily tell if that stage geometry was given its own <em>func_geo</em> or was accidentally left as worldspawn. Keep in mind that a Quake map file&#x27;s first entity will always be <em>worldspawn</em>, and that all map editors will only allow you to have one that they make automatically.</p>
+<p>It would also help to create your own new <em>worldspawn</em> entity definition that doesn&#x27;t build visuals or collision, so that you can more easily tell if that stage geometry was given its own <em>funcgeo</em> or was accidentally left as worldspawn. Keep in mind that a Quake map file&#x27;s first entity will always be <em>worldspawn</em>, and that all map editors will only allow you to have one that they make automatically.</p>
 <p>With that in mind... why not a <em>WorldEnvironment</em>? Let&#x27;s take a look at an example of how you might repurpose a Worldspawn for one.</p>
 <p>In TrenchBroom we can have our &#x60;worldspawn&#x60; settings set up like this in our FGD. We&#x27;re assuming you know how this is done by now, but if not <a href="guide_fgd.html#EntityClass">please go back and reread the section on Entities</a> near the beginning of the manual.</p>
 <p><figure class="content-center">
@@ -281,7 +281,7 @@ func _func_godot_apply_properties(props: Dictionary) -&gt; void:
 	env.set_adjustment_brightness(1.0)
 	set_environment(env)</code></pre>
 </doc-codeblock></div>
-<p>It doesn&#x27;t stop there, by the way. You may have noticed a number of key value pairs in our TrenchBroom entity: <em>lit_bounces</em>, <em>lit_denoiser</em>, etc... Instead of manually creating the lightmap for each map, we can have our Worldspawn entity programmatically create and modify the <em>LightmapGI</em> node any time the map is built. To do this, we&#x27;ll use the <code v-pre>_func_godot_build_complete()</code> method, automatically called as a deferred call at the end of the build process.</p>
+<p>It doesn&#x27;t stop there, by the way. You may have noticed a number of key value pairs in our TrenchBroom entity: <em>litbounces</em>, <em>litdenoiser</em>, etc... Instead of manually creating the lightmap for each map, we can have our Worldspawn entity programmatically create and modify the <em>LightmapGI</em> node any time the map is built. To do this, we&#x27;ll use the <code v-pre>_func_godot_build_complete()</code> method, automatically called as a deferred call at the end of the build process.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">func _func_godot_build_complete() -&gt; void:
 	# Find existing lightmap, else build a new one
@@ -327,16 +327,23 @@ func _func_godot_apply_properties(props: Dictionary) -&gt; void:
                             
                                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../ref_trenchbroom_resources/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../tips_naming/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">Trench​Broom Resources</span>
+                                                <span class="block mt-1">Naming Patterns</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../tips_runtime_building/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                                <span class="block mt-1">Runtime Map Building</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
                                     </div>
                                 </nav>
                             </footer>

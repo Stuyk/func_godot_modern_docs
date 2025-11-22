@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/func_godot_modern_docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817092218485">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817093248920">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../resources/css/retype.css?v=3.11.0.817092218485" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.11.0.817093248920" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.817092218485" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.817093248920" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.817092218485" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.817093248920" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -169,7 +169,7 @@
                                     <ol role="list">
                                         <li class="pr-4">
                                             <a href="../" class="pr-4">
-                                                Index
+                                                What is Func​Godot
                                             </a>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                                                 <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
@@ -205,7 +205,7 @@
 <blockquote>
 <p><code v-pre>// entity 1   {   &quot;classname&quot; &quot;func_detail&quot;   // brush 0   {   ( -32 -64 -16 ) ( -32 -63 -16 ) ( -32 -64 -15 ) __TB_empty [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1   ( -64 -32 -16 ) ( -64 -32 -15 ) ( -63 -32 -16 ) __TB_empty [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1   ( -64 -64 -32 ) ( -63 -64 -32 ) ( -64 -63 -32 ) special/clip [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1   ( 64 64 32 ) ( 64 65 32 ) ( 65 64 32 ) __TB_empty [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1   ( 64 32 16 ) ( 65 32 16 ) ( 64 32 17 ) special/clip [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1   ( 32 64 16 ) ( 32 64 17 ) ( 32 65 16 ) special/clip [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1   }   }   </code></p>
 </blockquote>
-<p>This is a <em>func_detail</em> entity from the default <em>FuncGodot.fgd</em>. As you can see, the map file structure is pretty straight-forward. This particular map uses the Valve 220 format, having additional options for UV mapping. Each line in a brush definition describes a face on the brush, and within that you can see that our texture is defined as just its location relative to the game&#x27;s texture folder or map&#x27;s WAD file.</p>
+<p>This is a <em>funcdetail</em> entity from the default <em>FuncGodot.fgd</em>. As you can see, the map file structure is pretty straight-forward. This particular map uses the Valve 220 format, having additional options for UV mapping. Each line in a brush definition describes a face on the brush, and within that you can see that our texture is defined as just its location relative to the game&#x27;s texture folder or map&#x27;s WAD file.</p>
 <p><em>But if that&#x27;s the case, how does FuncGodot know what file to use?</em></p>
 <p><a href="ref_func_godot_map.html#MapSettings">FuncGodot Map Settings</a> has several properties that help define and apply textures to your meshes on build:</p>
 <ul>
@@ -234,7 +234,7 @@
 </p>
 <p>FuncGodot&#x27;s first step is to search the <em>Base Material Dir</em> for a prebuilt material as defined by the brush face&#x27;s texture name in the format defined by <em>Material File Extension</em>.</p>
 <p>If it does not find this prebuilt material, it will search the <em>Base Texture Dir</em> for the <em>Texture2D</em> resource by the brush face&#x27;s texture name using any one of the extensions defined by <em>Texture File Extensions</em>. If it finds the Texture2D, it will create a copy of the <em>Default Material</em> and apply the Texture2D as the duplicated material&#x27;s albedo.</p>
-<p>If it does not find the Texture2D, then it will use the <em>default_texture.png</em> found in the <em>addons/func_godot/textures/</em> folder.</p>
+<p>If it does not find the Texture2D, then it will use the <em>defaulttexture.png</em> found in the <em>addons/funcgodot/textures/</em> folder.</p>
 <p><figure class="content-center">
     <img src="../images/default_texture.png" alt="Default texture" class="rounded-image-rounded border-image-border border-image-border-width" />
     <figcaption class="caption">Default texture</figcaption>
@@ -252,16 +252,16 @@
 </doc-anchor-target>
 <p>You may have noticed that we skipped over a few settings before, all of them with the suffix &quot;Map Pattern&quot;. When using a Default Material extending from <a href="class_basematerial3d.md">BaseMaterial3D</a>, FuncGodot has the ability to automatically generate PBR and ORM materials on build. Each of the &quot;Map Pattern&quot; properties tell FuncGodot&#x27;s Texture Loader how to find each texture map for our material.</p>
 <p><em>What&#x27;s with all the %s everywhere?</em></p>
-<p>It&#x27;s a placeholder token that gets replaced during texture loading. Each pattern requires two <em>%s</em> tokens. The first token is for the texture&#x27;s name as it appears in the map file. The second token is for the file extension; this is replaced as the Texture Loader cycles through the Map Settings&#x27; Texture File Extensions searching for your texture. So if Texture Loader is looking for the normal map of a texture entry named &quot;rock&quot; and our Map Settings&#x27; Normal Map Pattern is &quot;%s_normal.%s&quot; and it is currently checking for the &quot;png&quot; Texture File Extension, then it will be looking to see if the texture resource &quot;rock_normal.png&quot; exists, and if so it will be applied to the Map Settings&#x27; Default Material if it is a StandardMaterial3D.</p>
-<p>FuncGodot will look for PBR / ORM texture maps in both the same folder as the texture applied in the map file, or it will look in a subfolder with the same name. As an example: a brush is applied with the &quot;textures/rock&quot; texture in TrenchBroom, FuncGodot will first look for &quot;textures/rock_normal.png&quot; and then check &quot;textures/rock/rock_normal.png&quot;.</p>
+<p>It&#x27;s a placeholder token that gets replaced during texture loading. Each pattern requires two <em>%s</em> tokens. The first token is for the texture&#x27;s name as it appears in the map file. The second token is for the file extension; this is replaced as the Texture Loader cycles through the Map Settings&#x27; Texture File Extensions searching for your texture. So if Texture Loader is looking for the normal map of a texture entry named &quot;rock&quot; and our Map Settings&#x27; Normal Map Pattern is &quot;%snormal.%s&quot; and it is currently checking for the &quot;png&quot; Texture File Extension, then it will be looking to see if the texture resource &quot;rocknormal.png&quot; exists, and if so it will be applied to the Map Settings&#x27; Default Material if it is a StandardMaterial3D.</p>
+<p>FuncGodot will look for PBR / ORM texture maps in both the same folder as the texture applied in the map file, or it will look in a subfolder with the same name. As an example: a brush is applied with the &quot;textures/rock&quot; texture in TrenchBroom, FuncGodot will first look for &quot;textures/rocknormal.png&quot; and then check &quot;textures/rock/rocknormal.png&quot;.</p>
 <doc-anchor-target id="shader-material-uniform-mapping">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#shader-material-uniform-mapping">#</doc-anchor-trigger>
         <span>Shader Material Uniform Mapping</span>
     </h2>
 </doc-anchor-target>
-<p>So you&#x27;ve decided to use a <a href="class_shadermaterial.md">ShaderMaterial</a> with a custom GDShader. FuncGodot has the ability to automatically assign textures to your shader uniforms when generating ShaderMaterials on build through the use of the use of Map Settings&#x27; <em>shader_material_uniform_map_patterns</em> Dictionary.</p>
-<p>The dictionary is fairly straightforward: add your shader&#x27;s uniforms as the dictionary&#x27;s keys, while your values are the naming patterns for that uniform&#x27;s textures. Unlike Automatic PBR generation, you only use one placeholder token, used for the base texture&#x27;s name. An example of an entry would be a key &quot;normal_map&quot; paired with a value &quot;%s_n&quot;; if FuncGodot finds a texture named &quot;textures/brick.png&quot;, it will then search for &quot;textures/brick_n.png&quot; and assign it to the generated ShaderMaterial&#x27;s &quot;normal_map&quot; uniform.</p>
+<p>So you&#x27;ve decided to use a <a href="class_shadermaterial.md">ShaderMaterial</a> with a custom GDShader. FuncGodot has the ability to automatically assign textures to your shader uniforms when generating ShaderMaterials on build through the use of the use of Map Settings&#x27; <em>shadermaterialuniformmappatterns</em> Dictionary.</p>
+<p>The dictionary is fairly straightforward: add your shader&#x27;s uniforms as the dictionary&#x27;s keys, while your values are the naming patterns for that uniform&#x27;s textures. Unlike Automatic PBR generation, you only use one placeholder token, used for the base texture&#x27;s name. An example of an entry would be a key &quot;normalmap&quot; paired with a value &quot;%sn&quot;; if FuncGodot finds a texture named &quot;textures/brick.png&quot;, it will then search for &quot;textures/brickn.png&quot; and assign it to the generated ShaderMaterial&#x27;s &quot;normalmap&quot; uniform.</p>
 <blockquote>
 <p><em>NOTE: When using PBR materials with TrenchBroom, remember that you can add <em>Texture Exclusion Patterns</em> to the TrenchBroom Game Config to hide specific textures in the editor.</em></p>
 </blockquote>
@@ -312,7 +312,7 @@
 <p>To use it, first you must set your Solid Entity class resource <strong>origin type</strong> to <em>BRUSH</em>. Then in your map editor, create your brush entity as you normally would. Once you&#x27;ve done that, add an additional brush to your entity, move it to where you want the entity&#x27;s pivot point to be, and texture it with the Origin texture.</p>
 <p>Once you build the map in Godot, your entity should now have its pivot point set to the center of where the Origin brush was in the map file, and the Origin brush is removed.</p>
 <p><img src="../images/guide_tex_org1.png" alt="" /> <img src="../images/guide_tex_org2.png" alt="" /></p>
-<p>One last note: if you don&#x27;t create an Origin brush on a Solid Entity with the <em>BRUSH</em> origin type, it will fall back to using the <a href="ref_fgd_resources.html#Solid">BOUNDS_CENTER origin type</a>.</p>
+<p>One last note: if you don&#x27;t create an Origin brush on a Solid Entity with the <em>BRUSH</em> origin type, it will fall back to using the <a href="ref_fgd_resources.html#Solid">BOUNDSCENTER origin type</a>.</p>
 <doc-anchor-target id="wad-files">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#wad-files">#</doc-anchor-trigger>
@@ -340,20 +340,20 @@
                             
                                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../tips_runtime_building/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../guide_fgd/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">Runtime Map Building</span>
+                                                <span class="block mt-1">Forge Game Data</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../ref_trenchbroom_resources/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../guide_map_editor_config/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">Trench​Broom Resources</span>
+                                                <span class="block mt-1">Map Editor Configuration</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>

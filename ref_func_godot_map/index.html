@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/func_godot_modern_docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817092218485">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817093248920">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../resources/css/retype.css?v=3.11.0.817092218485" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.11.0.817093248920" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.817092218485" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.817093248920" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.817092218485" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.817093248920" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -167,7 +167,7 @@
                                     <ol role="list">
                                         <li class="pr-4">
                                             <a href="../" class="pr-4">
-                                                Index
+                                                What is Func​Godot
                                             </a>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                                                 <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
@@ -175,7 +175,7 @@
                                         </li>
                                         <li class="pr-4">
                                             <a href="../ref_func_godot_map/" class="pr-4">
-                                                Func​Godot​Map
+                                                Func​Godot Map
                                             </a>
                                         </li>
                                     </ol>
@@ -209,11 +209,11 @@
 <td>Description</td>
 </tr>
 <tr>
-<td>build_failed</td>
+<td>buildfailed</td>
 <td>Emitted when the build process fails.</td>
 </tr>
 <tr>
-<td>build_complete</td>
+<td>buildcomplete</td>
 <td>Emitted when the build process succesfully completes.</td>
 </tr>
 </tbody>
@@ -241,12 +241,12 @@
 <td>Return type</td>
 </tr>
 <tr>
-<td>fail_build(reason: String, notify: bool = false)</td>
-<td>Map build failure handler. Displays error message and emits <em>build_failed <em>signal.</em></em></td>
+<td>failbuild(reason: String, notify: bool = false)</td>
+<td>Map build failure handler. Displays error message and emits <em>buildfailed <em>signal.</em></em></td>
 <td>Void</td>
 </tr>
 <tr>
-<td>clear_children()</td>
+<td>clearchildren()</td>
 <td>Frees all children of the map node. WARNING! Does not distinguish between generated and placed nodes!</td>
 <td>Void</td>
 </tr>
@@ -316,7 +316,7 @@
 <tr>
 <td>Uv Unwrap Texel Size</td>
 <td>Float</td>
-<td>Texel size for UV2 unwrapping. Actual texel size is uv_unwrap_texel_size / inverse_scale_factor. A ratio of 1/16 is usually a good place to start with (if inverse_scale_factor is 32, start with a uv_unwrap_texel_size of 2). Larger values will produce less detailed lightmaps. To conserve memory and filesize, use the largest value that still looks good.</td>
+<td>Texel size for UV2 unwrapping. Actual texel size is uvunwraptexelsize / inversescalefactor. A ratio of 1/16 is usually a good place to start with (if inversescalefactor is 32, start with a uvunwraptexelsize of 2). Larger values will produce less detailed lightmaps. To conserve memory and filesize, use the largest value that still looks good.</td>
 </tr>
 <tr>
 <td>Entity Settings</td>
@@ -371,7 +371,7 @@
 <tr>
 <td>Skip Texture</td>
 <td>String</td>
-<td>Optional path for the skip texture, relative to <em>Base Texture Dir</em>. Brush faces textured with the skip texture will have those faces removed from the generated <em>Mesh</em>. If the <a href="ref_fgd_resources.html#Solid">FuncGodotFGDSolidClass</a> <em>collision_shape_type</em> is set to concave then it will also remove collision from those faces in the generated <em>Shape3D</em>.</td>
+<td>Optional path for the skip texture, relative to <em>Base Texture Dir</em>. Brush faces textured with the skip texture will have those faces removed from the generated <em>Mesh</em>. If the <a href="ref_fgd_resources.html#Solid">FuncGodotFGDSolidClass</a> <em>collisionshapetype</em> is set to concave then it will also remove collision from those faces in the generated <em>Shape3D</em>.</td>
 </tr>
 <tr>
 <td>Origin Texture</td>
@@ -411,7 +411,7 @@
 <tr>
 <td>Shader Material Uniform Map Patterns</td>
 <td>Dictionary[String, String]</td>
-<td>Automatic <em>ShaderMaterial</em> generation mapping patterns. Only used when <em>default_material</em> is a <em>ShaderMaterial</em>. Keys should be the names of the shader uniforms while the values should be the suffixes for the texture maps. Patterns only use one replacement String: the texture name, ex: <strong>&quot;%s_normal&quot;</strong>.</td>
+<td>Automatic <em>ShaderMaterial</em> generation mapping patterns. Only used when <em>defaultmaterial</em> is a <em>ShaderMaterial</em>. Keys should be the names of the shader uniforms while the values should be the suffixes for the texture maps. Patterns only use one replacement String: the texture name, ex: <strong>&quot;%snormal&quot;</strong>.</td>
 </tr>
 <tr>
 <td>Albedo Map Pattern</td>
@@ -470,20 +470,20 @@
                             
                                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../ref_ent_assembler/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../ref_netradiant_custom_resources/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">Func​Godot​Entity​Assembler</span>
+                                                <span class="block mt-1">Net​Radiant Custom Resources</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../ref_parser/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../ref_util/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">Func​Godot​Parser</span>
+                                                <span class="block mt-1">Func​Godot Util</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -527,6 +527,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "FuncGodotMap", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "FuncGodot Map", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

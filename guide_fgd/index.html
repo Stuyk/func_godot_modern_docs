@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/func_godot_modern_docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817092218485">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817093248920">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../resources/css/retype.css?v=3.11.0.817092218485" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.11.0.817093248920" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.817092218485" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.817093248920" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.817092218485" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.817093248920" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -169,7 +169,7 @@
                                     <ol role="list">
                                         <li class="pr-4">
                                             <a href="../" class="pr-4">
-                                                Index
+                                                What is Func​Godot
                                             </a>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                                                 <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
@@ -206,14 +206,14 @@
         <span>FGD File Resource</span>
     </h2>
 </doc-anchor-target>
-<p>Some of you may only want to build map geometry with some control over collision and occlusion, and prefer to add all of your lights, actors, scripting, etc... in Godot directly. To that end there is a basic default <em>func_godot_fgd.tres</em> included with FuncGodot. You can find it under <em>addons/func_godot/fgd/func_godot_fgd.tres</em>.</p>
+<p>Some of you may only want to build map geometry with some control over collision and occlusion, and prefer to add all of your lights, actors, scripting, etc... in Godot directly. To that end there is a basic default <em>funcgodotfgd.tres</em> included with FuncGodot. You can find it under <em>addons/funcgodot/fgd/funcgodotfgd.tres</em>.</p>
 <p><figure class="content-center">
     <img src="../images/guide_fgd_res_loc.png" alt="func_godot_fgd.tres location." class="rounded-image-rounded border-image-border border-image-border-width" />
     <figcaption class="caption">func_godot_fgd.tres location.</figcaption>
 </figure>
 </p>
-<p>This is the default FGD file set in the <a href="ref_func_godot_map.html#MapSettings"><strong>FuncGodotMapSettings</strong></a> resource. The basic entity definitions included with it are <em>Worldspawn</em>, <em>func_geo</em>, <em>func_detail</em>, <em>func_detail_illusionary</em>, <em>func_illusionary</em>, and <em>Phong</em>. We&#x27;ll go over what each of these entity types are a little farther below.</p>
-<p>But what if you want to add your own custom entity types? It&#x27;s always best practice to create your own FGD File resource and <strong><em>NEVER</em></strong> a good idea to just modify the pre-existing default FGD File. Any time FuncGodot is updated, it will overwrite the <em>func_godot_fgd.tres</em> that comes with it and erase any changes you&#x27;ve made to that resource. While the goal is to keep the default FGD File as basic as possible, we cannot guarantee it won&#x27;t be changed at some point in the future.</p>
+<p>This is the default FGD file set in the <a href="ref_func_godot_map.html#MapSettings"><strong>FuncGodotMapSettings</strong></a> resource. The basic entity definitions included with it are <em>Worldspawn</em>, <em>funcgeo</em>, <em>funcdetail</em>, <em>funcdetailillusionary</em>, <em>funcillusionary</em>, and <em>Phong</em>. We&#x27;ll go over what each of these entity types are a little farther below.</p>
+<p>But what if you want to add your own custom entity types? It&#x27;s always best practice to create your own FGD File resource and <strong><em>NEVER</em></strong> a good idea to just modify the pre-existing default FGD File. Any time FuncGodot is updated, it will overwrite the <em>funcgodotfgd.tres</em> that comes with it and erase any changes you&#x27;ve made to that resource. While the goal is to keep the default FGD File as basic as possible, we cannot guarantee it won&#x27;t be changed at some point in the future.</p>
 <p>That said, it is possible to include the default FuncGodot FGD File into your own as a Base FGD. Create a new <em>FuncGodotFGDFile</em> resource and examine it in the inspector.</p>
 <p><figure class="content-center">
     <img src="../images/ref_fgd_file.png" alt="FuncGodotFGDFile resource properties." class="rounded-image-rounded border-image-border border-image-border-width" />
@@ -227,13 +227,13 @@
 <blockquote>
 <p><em>NOTE: This is <strong>not</strong> where you would put your <strong>FuncGodotFGDBaseClass</strong> resources! Those are not the same as FuncGodotFGDFile resources and are considered entities! More information on FuncGodotFGDBaseClass found below.</em></p>
 </blockquote>
-<p>To add the <em>func_godot_fgd.tres</em> as a base FGD file to your custom FGD file, all you need to do is locate <em>func_godot_fgd.tres</em> and drag and drop it onto the <strong>Base Fgd Files</strong> array in the inspector.</p>
+<p>To add the <em>funcgodotfgd.tres</em> as a base FGD file to your custom FGD file, all you need to do is locate <em>funcgodotfgd.tres</em> and drag and drop it onto the <strong>Base Fgd Files</strong> array in the inspector.</p>
 <p><figure class="content-center">
     <img src="../images/guide_fgd_base_fgd.png" alt="FuncGodotFGDFile base FGD example." class="rounded-image-rounded border-image-border border-image-border-width" />
     <figcaption class="caption">FuncGodotFGDFile base FGD example.</figcaption>
 </figure>
 </p>
-<p>The last property is <strong>Entity Definitions</strong>. This is where you&#x27;ll drop all of your custom entity resources to be built or instanced by FuncGodot. Let&#x27;s take a look at what a populated one looks like by viewing the default <em>func_godot_fgd.tres</em> in the inspector.</p>
+<p>The last property is <strong>Entity Definitions</strong>. This is where you&#x27;ll drop all of your custom entity resources to be built or instanced by FuncGodot. Let&#x27;s take a look at what a populated one looks like by viewing the default <em>funcgodotfgd.tres</em> in the inspector.</p>
 <p><figure class="content-center">
     <img src="../images/guide_fgd_func_godot_fgd.png" alt="FuncGodotFGDFile default FGD." class="rounded-image-rounded border-image-border border-image-border-width" />
     <figcaption class="caption">FuncGodotFGDFile default FGD.</figcaption>
@@ -263,10 +263,10 @@
 </figure>
 </p>
 <p>If you decide you want to make modifications to your generated entities on map build using any of the following methods, you&#x27;ll need to make sure that your entity&#x27;s script is set as a <a href="running_code_in_the_editor.md"></a><code v-pre>@tool</code> script.</p>
-<p>The first method call is to <code v-pre>_func_godot_apply_properties(entity_properties: Dictionary)</code>. Because <code v-pre>_func_godot_apply_properties</code> passes the entity properties in the function, you do not need to declare a <em>func_godot_properties</em> dictionary in your node script; instead, just apply your properties as needed in this callback.</p>
-<p>After every entity has called <code v-pre>_func_godot_apply_properties</code>, FuncGodot will cycle through all of them again and attempt to call <code v-pre>_func_godot_build_complete()</code> as a deferred call. Since we&#x27;re calling this method deferred after every entity has already called the previous method, we can guarantee any nodes generated by our entities in <code v-pre>_func_godot_apply_properties</code> can be referenced during <em>_func_godot_build_complete</em>.</p>
+<p>The first method call is to <code v-pre>_func_godot_apply_properties(entity_properties: Dictionary)</code>. Because <code v-pre>_func_godot_apply_properties</code> passes the entity properties in the function, you do not need to declare a <em>funcgodotproperties</em> dictionary in your node script; instead, just apply your properties as needed in this callback.</p>
+<p>After every entity has called <code v-pre>_func_godot_apply_properties</code>, FuncGodot will cycle through all of them again and attempt to call <code v-pre>_func_godot_build_complete()</code> as a deferred call. Since we&#x27;re calling this method deferred after every entity has already called the previous method, we can guarantee any nodes generated by our entities in <code v-pre>_func_godot_apply_properties</code> can be referenced during <em>funcgodotbuildcomplete</em>.</p>
 <p>Additionally upon building, all of the entity&#x27;s key value pairs will be added to the generated node&#x27;s <code v-pre>func_godot_properties</code> Dictionary (provided that the property is set as an exported variant).</p>
-<p>We&#x27;ll examine this <em>FuncGeo</em> class as a demonstration of the relationships between the FuncGodotFGDBaseClass, the FuncGodotFGDSolidClass, the func_geo brush entity in the map editor, and the final generated Godot FuncGeo StaticBody3D node.</p>
+<p>We&#x27;ll examine this <em>FuncGeo</em> class as a demonstration of the relationships between the FuncGodotFGDBaseClass, the FuncGodotFGDSolidClass, the funcgeo brush entity in the map editor, and the final generated Godot FuncGeo StaticBody3D node.</p>
 <p>The image on the left depicts a <em>Base Class</em> resource that contains other base classes to accumulate <em>Class Properties</em>. The image on the right is a <em>Solid Class</em> resource containing that Base Class and defines our FuncGeo entity.</p>
 <p><img src="../images/guide_fgd_funcgeo0.png" alt="Func Base Class" /> <img src="../images/guide_fgd_funcgeo1.png" alt="FuncGeo Solid Class" /></p>
 <p>This is our FuncGeo entity&#x27;s properties as they appear in TrenchBroom.</p>
@@ -291,9 +291,9 @@
 </doc-anchor-target>
 <p>All default FuncGodot entities, except for <em>Phong</em>, are FuncGodotFGDSolidClass entities. All of the SolidClass entities are very similar, mostly differing in occlusion and collision.</p>
 <ul>
-<li><p><strong>Phong :</strong> A FuncGodotFGDBaseClass that provides <em>_phong</em> and <em>_phong_angle</em> properties to most of the entities below. See the <a href="https://en.wikipedia.org/wiki/Phong_shading" class="outbound" target="_blank"><span>Wikipedia article on Phong Shading</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> for quick primer.</p>
+<li><p><strong>Phong :</strong> A FuncGodotFGDBaseClass that provides <em>phong</em> and <em>phongangle</em> properties to most of the entities below. See the <a href="https://en.wikipedia.org/wiki/Phong_shading" class="outbound" target="_blank"><span>Wikipedia article on Phong Shading</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> for quick primer.</p>
 </li>
-<li><p><strong>VertexMergeDistance :</strong> A FuncGodotFGDBaseClass that provides a <em>_vertex_merge_distance</em> property to all of the entities below. This property is used in the build process to better ensure vertices between brushes get connected, to reduce instances of gaps between seams in polygons.</p>
+<li><p><strong>VertexMergeDistance :</strong> A FuncGodotFGDBaseClass that provides a <em>vertexmergedistance</em> property to all of the entities below. This property is used in the build process to better ensure vertices between brushes get connected, to reduce instances of gaps between seams in polygons.</p>
 </li>
 </ul>
 <blockquote>
@@ -303,13 +303,13 @@
 <li><p><strong>worldspawn :</strong> A geometry class that mimics the Worldspawn entity found in Quake and Half-Life. In the FuncGodot implementation, Worldspawn generates a single <a href="class_staticbody3d.md">StaticBody3D</a> with a child <a href="class_meshinstance3d.md">MeshInstance3D</a> and multiple convex <a href="class_collisionshape3d.md">CollisionShape3D</a> children. It also generates an <a href="class_occluderinstance3d.md">OccluderInstance3D</a> with an <a href="class_arrayoccluder3d.md">ArrayOccluder3D</a>.<br />
 Under normal circumstances, there can only ever be one Worldspawn entity in a map file. While there technically are ways to create multiple Worldspawn entities this manual will not explore that possibility.</p>
 </li>
-<li><p><strong>func_geo :</strong> Identical to Worldspawn, with the exception being that you can (and should) create multiple func_geos. See <a href="../tips_worldspawn/">Why Not Worldspawn?</a> for more information.</p>
+<li><p><strong>funcgeo :</strong> Identical to Worldspawn, with the exception being that you can (and should) create multiple funcgeos. See <a href="../tips_worldspawn/">Why Not Worldspawn?</a> for more information.</p>
 </li>
-<li><p><strong>func_detail :</strong> Almost identical to <em>func_geo</em>, with the exception that they do not generate OccluderInstance3D children.</p>
+<li><p><strong>funcdetail :</strong> Almost identical to <em>funcgeo</em>, with the exception that they do not generate OccluderInstance3D children.</p>
 </li>
-<li><p><strong>func_illusionary :</strong> Geometry that has no collision. It generates a <a href="class_node3d.md">Node3D</a>, a MeshInstance3D child, and an OccluderInstance3D child.</p>
+<li><p><strong>funcillusionary :</strong> Geometry that has no collision. It generates a <a href="class_node3d.md">Node3D</a>, a MeshInstance3D child, and an OccluderInstance3D child.</p>
 </li>
-<li><p><strong>func_detail_illusionary :</strong> Identical to func_illusionary, except that it does not generate an OccluderInstance3D child.</p>
+<li><p><strong>funcdetailillusionary :</strong> Identical to funcillusionary, except that it does not generate an OccluderInstance3D child.</p>
 </li>
 </ul>
 
@@ -321,20 +321,20 @@ Under normal circumstances, there can only ever be one Worldspawn entity in a ma
                             
                                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../ref_key_value_pairs/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../guide_project_config/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">Entity Key Value Pairs</span>
+                                                <span class="block mt-1">Project Configuration</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../faq/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../guide_textures/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">Frequently Asked Questions</span>
+                                                <span class="block mt-1">Textures</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
