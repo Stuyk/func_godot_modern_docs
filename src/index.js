@@ -24,6 +24,9 @@ function preprocessLinks(htmlContent) {
         return `href="${newPath}"`;
     });
 
+    const svgLinkRemovalRegex = /href="[^"]+\.svg"/gi;
+    processedHtml = processedHtml.replace(svgLinkRemovalRegex, '');
+
     const imageRegex = /src="([^"]+\.(?:png|jpe?g|gif|webp|svg|bmp))"/gi;
 
     processedHtml = processedHtml.replace(imageRegex, (match, fullPath) => {
@@ -79,6 +82,18 @@ function runConverter() {
                 let outputFileName = fileNameWithExtension.replace(/\.html$/i, '.md');
                 if (outputFileName.includes('start')) {
                    outputFileName = outputFileName.replace('start', 'index') 
+                }
+
+                if (outputFileName.includes('header')) {
+                    continue;
+                }
+
+                if (outputFileName.includes('sidenav')) {
+                    continue
+                }
+
+                if (outputFileName.includes('funcgodot-manual')) {
+                    continue;
                 }
 
                 const outputFullPath = path.join(absoluteOutputDir, outputFileName);
