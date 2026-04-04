@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/func_godot_modern_docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.828492585995">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.828578800535">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../resources/css/retype.css?v=3.12.0.828492585995" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.12.0.828578800535" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.12.0.828492585995" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.12.0.828578800535" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.12.0.828492585995" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.12.0.828578800535" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -183,8 +183,8 @@
 </doc-anchor-target>
 <p>Some of you may only want to build map geometry with some control over collision and occlusion, and prefer to add all of your lights, actors, scripting, etc... in Godot directly. To that end there is a basic default <em>funcgodotfgd.tres</em> included with FuncGodot. You can find it under <em>addons/funcgodot/fgd/funcgodotfgd.tres</em>.</p>
 <p><figure class="content-center">
-    <img src="../images/guide_fgd_res_loc.png" alt="func_godot_fgd.tres location." class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption">func_godot_fgd.tres location.</figcaption>
+    <img src="../images/guide_fgd_res_loc.png" alt="funcgodotfgd.tres location." class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">funcgodotfgd.tres location.</figcaption>
 </figure>
 </p>
 <p>This is the default FGD file set in the <a href="ref_func_godot_map.html#MapSettings"><strong>FuncGodotMapSettings</strong></a> resource. The basic entity definitions included with it are <em>Worldspawn</em>, <em>funcgeo</em>, <em>funcdetail</em>, <em>funcdetailillusionary</em>, <em>funcillusionary</em>, and <em>Phong</em>. We&#x27;ll go over what each of these entity types are a little farther below.</p>
@@ -233,8 +233,8 @@
     </h2>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="../images/guide_fgd_apply_props.png" alt="FuncGodotMap GDScript method showing application of 'func_godot_properties' and callback of '_func_godot_apply_properties' and '_func_godot_build_complete'." class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption">FuncGodotMap GDScript method showing application of 'func_godot_properties' and callback of '_func_godot_apply_properties' and '_func_godot_build_complete'.</figcaption>
+    <img src="../images/guide_fgd_apply_props.png" alt="FuncGodotMap GDScript method showing application of 'funcgodotproperties' and callback of 'funcgodotapplyproperties' and 'funcgodotbuildcomplete'." class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">FuncGodotMap GDScript method showing application of 'funcgodotproperties' and callback of 'funcgodotapplyproperties' and 'funcgodotbuildcomplete'.</figcaption>
 </figure>
 </p>
 <p>If you decide you want to make modifications to your generated entities on map build using any of the following methods, you&#x27;ll need to make sure that your entity&#x27;s script is set as a <a href="running_code_in_the_editor.md"></a><code translate="no" v-pre>@tool</code> script.</p>
@@ -246,8 +246,8 @@
 <p><img src="../images/guide_fgd_funcgeo0.png" alt="Func Base Class" /> <img src="../images/guide_fgd_funcgeo1.png" alt="FuncGeo Solid Class" /></p>
 <p>This is our FuncGeo entity&#x27;s properties as they appear in TrenchBroom.</p>
 <p><figure class="content-center">
-    <img src="../images/guide_fgd_funcgeo2.png" alt="func_geo brush entity properties in TrenchBroom" class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption">func_geo brush entity properties in TrenchBroom</figcaption>
+    <img src="../images/guide_fgd_funcgeo2.png" alt="funcgeo brush entity properties in TrenchBroom" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">funcgeo brush entity properties in TrenchBroom</figcaption>
 </figure>
 </p>
 <p>The generated FuncGeo node&#x27;s properties in the inspector. See how our <em>Func Godot Properties</em> Dictionary matches our Class Properties from our map editor.</p>

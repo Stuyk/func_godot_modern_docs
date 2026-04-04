@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/func_godot_modern_docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.828492585995">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.828578800535">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -31,11 +31,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../resources/css/retype.css?v=3.12.0.828492585995" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.12.0.828578800535" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.12.0.828492585995" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.12.0.828578800535" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.12.0.828492585995" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.12.0.828578800535" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -205,8 +205,8 @@
 <p>Use <code translate="no" v-pre>_func_godot_apply_properties</code> to apply your key value pairs to your node, as they are passed through the <code translate="no" v-pre>_func_godot_properties</code> argument in the function.</p>
 <p><code translate="no" v-pre>_func_godot_build_complete</code> is a deferred call that happens after every entity has called <code translate="no" v-pre>_func_godot_apply_properties</code>, making it safe to reference any nodes generated during <code translate="no" v-pre>_func_godot_apply_properties</code>.</p>
 <p><figure class="content-center">
-    <img src="../images/guide_fgd_apply_props.png" alt="FuncGodotMap GDScript method showing application of 'func_godot_properties' and callback of '_func_godot_apply_properties' and '_func_godot_build_complete'." class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption">FuncGodotMap GDScript method showing application of 'func_godot_properties' and callback of '_func_godot_apply_properties' and '_func_godot_build_complete'.</figcaption>
+    <img src="../images/guide_fgd_apply_props.png" alt="FuncGodotMap GDScript method showing application of 'funcgodotproperties' and callback of 'funcgodotapplyproperties' and 'funcgodotbuildcomplete'." class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">FuncGodotMap GDScript method showing application of 'funcgodotproperties' and callback of 'funcgodotapplyproperties' and 'funcgodotbuildcomplete'.</figcaption>
 </figure>
 </p>
 <p>You are allowed to limit yourself to only the application methods you&#x27;re interested in. Mix and match these options as you see fit for your entities.</p>
@@ -216,7 +216,7 @@
         <span>Property Types</span>
     </h2>
 </doc-anchor-target>
-<p>FuncGodot supports many of the <a href="https://docs.godotengine.org/en/stable/classes/class_%40globalscope.html#enum-globalscope-variant-type" class="outbound" target="_blank"><span>Godot Variant types</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>. Consult the [key values section of the FGD page on the Valve Developer Wiki](<a href="https://developer.valvesoftware.com/wiki/FGD#key" class="outbound" target="_blank"><span>https://developer.valvesoftware.com/wiki/FGD#key</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> values) for more information on FGD value types.</p>
+<p>FuncGodot supports many of the <a href="https://docs.godotengine.org/en/stable/classes/class_%40globalscope.html#enum-globalscope-variant-type" class="outbound" target="_blank"><span>Godot Variant types</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>. Consult the <a href="https://developer.valvesoftware.com/wiki/FGD#key%20values" class="outbound" target="_blank"><span>key values section of the FGD page on the Valve Developer Wiki</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> for more information on FGD value types.</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
